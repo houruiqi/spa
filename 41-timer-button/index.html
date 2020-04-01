@@ -10,7 +10,7 @@
     <body>
         <input id="add"  type="button" value="添加定时器按钮">
         <!-- <input type="text"> -->
-        <br>
+        <!-- <br>
         初始状态：<input type="radio" name="a" value="q" checked>启用
         <input type="radio" name="a" value="j">禁用
         <br>
@@ -19,7 +19,7 @@
         按钮文字：<input type="text" id="code" value="发送验证码">
         <br>
         事件代码：<input type="text" id="event" value="console.log('点击了定时器按钮！')">
-        <hr>
+        <hr> -->
         <div id="main">
         </div>
         <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -28,9 +28,6 @@
             $(function(){
                 var $btnAdd = $('#add');
                 $btnAdd.click(function(){
-                    var choose =  $("input[type='radio'][name='a']:checked").val();
-                    console.log(choose);
-                    if(choose=="q"){
                         $timerButton.sshow({
                             num:parseInt($('#time').val()),
                             title:$('#code').val(),
@@ -39,18 +36,31 @@
                             }
                         });
                     }
-                    else if(choose=="j"){
-                        $timerButton.show({
-                            num:parseInt($('#time').val()),
-                            title:$('#code').val(),
-                            onClick:function(){
-                                $('#event').val()
-                            }
-                        });
-                    }
+                // var $btnAdd = $('#add');
+                // $btnAdd.click(function(){
+                //     var choose =  $("input[type='radio'][name='a']:checked").val();
+                //     console.log(choose);
+                //     if(choose=="q"){
+                //         $timerButton.sshow({
+                //             num:parseInt($('#time').val()),
+                //             title:$('#code').val(),
+                //             onClick:function(){
+                //                 $('#event').val()
+                //             }
+                //         });
+                //     }
+                //     else if(choose=="j"){
+                //         $timerButton.show({
+                //             num:parseInt($('#time').val()),
+                //             title:$('#code').val(),
+                //             onClick:function(){
+                //                 $('#event').val()
+                //             }
+                //         });
+                //     }
                     
-                    console.log('add');
-                })
+                //     console.log('add');
+                // })
             })
         </script>
     </body>

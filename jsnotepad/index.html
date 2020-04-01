@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <title>goto dialog</title>
+        <link rel="stylesheet" href="./dia-goto.css">
+    
+    </head>
+    <body>
+        <input id="popup"  type="button" value="弹出对话框">
+        <hr>
+        <!-- div.notepad-dlg-goto>div.dialogbox>div.titlebar>p.title+span.close-btn^ -->
+        <!-- <div class="notepad-dlg-goto">
+            <div class="dialogbox">
+                <div class="titlebar">
+                    <p class="title">转到指定行</p>
+                    <span class="close-btn">×</span>
+                </div>
+                <div class="main">
+                    <label for="">行号（L）：</label>
+                    <br>
+                    <input class="txt-line-num" type="text">
+                    <br>
+                    <input class="btn-goto" type="button" value="转到">
+                    <input class="btn-cancel" type="button" value="取消">
+                </div>
+            </div>
+        </div> -->
+        <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="./dia-goto.js"></script>
+        <script>
+            $(function(){
+                var $btnDlg = $('#popup');
+                $btnDlg.click(function(){
+                    $dlgGoto.show({
+                        
+                    });
+                })
+            })
+        </script>
+    </body>
+    
+</html>

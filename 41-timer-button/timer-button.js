@@ -1,9 +1,18 @@
 var $timerButton=(function(){
     var 
-    $btn=$('<input type="button" value="同意（6s）" disabled/>'),
         // 启用
-        $btn2=$('<input type="button" value="同意（6s）"/>'),
-        cfg = {
+        $btn2=$('<input type="button" value="同意（6s）"/>');
+    // $btn.css({
+    //     height:'50px',
+    //     width:'120px'
+    // })
+    // $btn2.css({
+    //     height:'50px',
+    //     width:'120px'
+    // })
+    function show(conf){
+        var $btn=$('<input type="button" value="同意（6s）" disabled/>');
+        var cfg = {
             container:'body',
             num:6,
             title:'同意',
@@ -13,11 +22,6 @@ var $timerButton=(function(){
         },
         num,
         timer;
-    $btn.css({
-        height:'50px',
-        width:'120px'
-    })
-    function show(conf){
         // 1.DOM draw
         $(cfg.container).append($btn);
         $.extend(cfg,conf);
@@ -33,32 +37,33 @@ var $timerButton=(function(){
                 $btn.val(cfg.title+'('+num+'s)')
             }
         },1000)
+        $btn.click(function(){
+            cfg.onClick();
+         })
     }
-    function sshow(conf){
-        $(cfg.container).append($btn2);
-        $.extend(cfg,conf);
-        num = cfg.num;
-        $btn2.val(cfg.title);
-        $btn2.click(function(){
-            timer=setInterval(function() {
-                num--;
-                if(num===0){
-                    clearInterval(timer);
-                    $btn2.removeAttr("disabled");
-                    $btn2.val(cfg.title);
-                }
-                else{
-                    $btn2.val(cfg.title+'('+num+'s)');
-                    $btn2.attr("disabled","disabled");
-                }
-            }, 1000);
-        })
-    }
-     $btn.click(function(){
-        cfg.onClick();
-     })
+    // function sshow(conf){
+    //     $(cfg.container).append($btn2);
+    //     $.extend(cfg,conf);
+    //     num = cfg.num;
+    //     $btn2.val(cfg.title);
+    //     $btn2.click(function(){
+    //         timer=setInterval(function() {
+    //             num--;
+    //             if(num===0){
+    //                 clearInterval(timer);
+    //                 $btn2.removeAttr("disabled");
+    //                 $btn2.val(cfg.title);
+    //             }
+    //             else{
+    //                 $btn2.val(cfg.title+'('+num+'s)');
+    //                 $btn2.attr("disabled","disabled");
+    //             }
+    //         }, 1000);
+    //     })
+    // }
+     
      return{
          show:show,
-         sshow:sshow
+        //  sshow:sshow
      }
 }())
