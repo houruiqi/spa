@@ -4,10 +4,6 @@ $(function(){
     $img = $('img'),
     $tmpImg = $('<img>');
 
-    // var strImg = window.localStorage.getItem('img');
-    // if(strImg !== ''){
-    //     $img.attr('src',strImg);
-    // }
     
     $btnSave.click(function(){
         var url = $url.val();
